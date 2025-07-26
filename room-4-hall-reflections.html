@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room 4: Hall of Reflections - Celestial Sudoku Challenge</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="room-4-hall-reflections.css">
+</head>
+<body>
+  <!-- Grand Hall Background -->
+  <div class="hall-background" id="hallBackground">
+    <div class="portal-light portal-light-1"></div>
+    <div class="portal-light portal-light-2"></div>
+    <div class="portal-light portal-light-3"></div>
+    <div class="reflection-particles" id="reflectionParticles"></div>
+    <div class="hall-pillars"></div>
+  </div>
+
+  <!-- Room Header -->
+  <div class="room-header">
+    <h1 class="room-title">Hall of Reflections</h1>
+    <h2 class="room-subtitle">Celestial Sudoku Harmony Challenge</h2>
+    <div class="sudoku-status">
+      <div class="status-item">
+        <span class="status-label">Completion:</span>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+          <span class="progress-text" id="progressText">0%</span>
+        </div>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Conflicts:</span>
+        <span class="status-value" id="conflictsCount">0</span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Harmony:</span>
+        <span class="status-value" id="harmonyLevel">Perfect</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sudoku Challenge Area -->
+  <div class="sudoku-challenge-container">
+    <!-- Celestial Sudoku Grid -->
+    <div class="sudoku-grid-section">
+      <h3 class="section-title">🌌 Celestial Number Grid</h3>
+      
+      <div class="sudoku-grid-container">
+        <div class="sudoku-grid" id="sudokuGrid">
+          <!-- 9x9 Sudoku grid will be dynamically generated -->
+        </div>
+      </div>
+      
+      <!-- Number Selection Panel -->
+      <div class="number-selection">
+        <h4 class="selection-title">✨ Celestial Numbers</h4>
+        <div class="number-palette" id="numberPalette">
+          <!-- Number buttons will be dynamically generated -->
+        </div>
+                 <div class="selection-controls">
+           <button class="control-btn" id="eraseBtn" onclick="selectEraser()">
+             🧹 Erase
+           </button>
+         </div>
+      </div>
+    </div>
+
+    <!-- Algorithm Control Panel -->
+    <div class="algorithm-panel">
+      <h3 class="panel-title">🎯 Sudoku Harmony Controls</h3>
+      
+      <div class="algorithm-state">
+        <div class="current-step" id="currentStep">
+          Select a celestial number and place it in the grid
+        </div>
+        <div class="algorithm-info">
+          <div class="info-row">
+            <span>Current Phase:</span>
+            <span id="currentPhase">Number Placement</span>
+          </div>
+          <div class="info-row">
+            <span>Cells Filled:</span>
+            <span id="cellsFilled">0 / 81</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="control-buttons">
+        <button class="control-btn" id="validateBtn" onclick="validateSudoku()">
+          ✅ Validate Harmony
+        </button>
+        <button class="control-btn" id="resetBtn" onclick="resetSudoku()">
+          🔄 Reset Grid
+        </button>
+      </div>
+      
+      <!-- Sudoku Rules Visualization -->
+      <div class="sudoku-rules" id="sudokuRules">
+        <h4>📐 Harmony Rules</h4>
+        <div class="rules-info">
+          <div class="rule-item">Each row must contain numbers 1-9</div>
+          <div class="rule-item">Each column must contain numbers 1-9</div>
+          <div class="rule-item">Each 3×3 box must contain numbers 1-9</div>
+          <div class="rule-item">No number can repeat in its row, column, or box</div>
+        </div>
+      </div>
+      
+      <!-- Algorithm Explanation -->
+      <div class="algorithm-explanation">
+        <h4>🎓 Sudoku Principles</h4>
+        <ul>
+          <li><strong>Logic:</strong> Use constraint satisfaction to place numbers</li>
+          <li><strong>Elimination:</strong> Remove impossible candidates</li>
+          <li><strong>Naked Singles:</strong> Find cells with only one possibility</li>
+          <li><strong>Hidden Singles:</strong> Find numbers with only one valid position</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Instructions -->
+  <div class="game-instructions">
+    <h3>📋 Celestial Sudoku Instructions</h3>
+    <ul>
+      <li>🌌 <strong>Objective:</strong> Fill the 9×9 grid so each row, column, and 3×3 box contains numbers 1-9</li>
+      <li>🎯 <strong>Method:</strong> Use logical deduction to determine where each number belongs</li>
+      <li>🖱️ <strong>Interaction:</strong> Select a number, then click an empty cell to place it</li>
+      <li>⚠️ <strong>Conflicts:</strong> Red highlights indicate rule violations that must be resolved</li>
+      
+      <li>✨ <strong>Victory:</strong> Achieve perfect celestial harmony by completing the grid!</li>
+    </ul>
+  </div>
+
+  <!-- Victory Modal -->
+  <div class="victory-modal" id="victoryModal">
+    <div class="modal-content reflection-glow">
+      <h2>🏆 Celestial Harmony Achieved!</h2>
+      <p>You've mastered the ancient art of celestial number harmony!</p>
+      <div class="victory-stats">
+        <div class="stat">
+          <span class="stat-label">Completion Time:</span>
+          <span class="stat-value" id="completionTime">0:00</span>
+        </div>
+        
+        <div class="stat">
+          <span class="stat-label">Harmony Level:</span>
+          <span class="stat-value" id="finalHarmony">Perfect</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Mastery Rating:</span>
+          <span class="stat-value" id="masteryRating">Expert</span>
+        </div>
+      </div>
+      <div class="guardian-manifestation">
+        <div class="celestial-lion">🦁✨</div>
+        <p class="manifestation-text">The Celestial Lion emerges from the harmonized grid!</p>
+      </div>
+      <div class="fragment-reward">
+        <h3>🎁 Fragment Reward</h3>
+        <div class="reward-fragment">Main Figure: A celestial lion with glowing wings and jeweled crown</div>
+      </div>
+      <button class="next-room-btn" onclick="completeFinalQuest()">Complete Final Quest →</button>
+    </div>
+  </div>
+
+  <!-- Conflict Modal -->
+  <div class="conflict-modal" id="conflictModal">
+    <div class="modal-content conflict-content">
+      <h2>⚠️ Harmony Disruption Detected!</h2>
+      <div class="conflict-explanation">
+        <p>The celestial numbers are in conflict! Each number must appear only once in its row, column, and 3×3 box.</p>
+        <div class="conflict-list" id="conflictList">
+          <!-- Conflicts will be listed here -->
+        </div>
+      </div>
+      <button class="conflict-close-btn" onclick="closeConflictModal()">Restore Harmony</button>
+    </div>
+  </div>
+
+  
+
+  <script src="room-4-hall-reflections.js"></script>
+</body>
+</html> 

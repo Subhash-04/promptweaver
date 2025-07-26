@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Search - Promptweaver: Rise of the Sigil</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="room-search.css">
+</head>
+<body>
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop>
+      <source src="Recording 2025-07-24 213057.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  <!-- Background overlay -->
+  <div class="background-overlay"></div>
+  
+  <!-- Enhanced stars -->
+  <div class="stars" id="stars"></div>
+  
+  <!-- Room Search Video Modal (Auto-opens) -->
+  <div class="video-modal active" id="roomVideoModal">
+    <div class="video-container">
+      <div class="video-title">Searching the Ancient Chamber...</div>
+      <video class="video-player" id="roomVideo" autoplay>
+        <source src="Scene_5_the_202507250059.mp4" type="video/mp4">
+
+        Your browser does not support the video tag.
+      </video>
+      <button class="proceed-btn" id="proceedBtn">Enter the Multiverse</button>
+    </div>
+  </div>
+  
+  <!-- Page Content (hidden until video completes) -->
+  <div class="container" id="pageContent" style="display: none;">
+    <div class="title">The Academy Awaits</div>
+    <div class="subtitle">You have discovered the entrance to the multiverse chambers...</div>
+    <div class="story">
+      Through the mystical corridors of the academy, you have found the entrance to the <b>Multiverse Chambers</b>. 
+      Ancient runes glow along the walls, and the air crackles with magical energy. <br><br>
+      Four enchanted doorways stand before you, each leading to a different realm where a piece of the 
+      <b>Guardian's Portrait</b> awaits. Choose your path wisely, for each puzzle grows more challenging 
+      than the last. <br><br>
+      The first chamber beckons with <b>neon lights</b> and <b>cosmic energy</b>...
+    </div>
+    <a href="puzzle-interface.html" class="cta">Enter First Chamber</a>
+  </div>
+
+      <script src="script.js"></script>
+    <script src="global-timer.js"></script>
+    <script src="room-search.js"></script>
+</body>
+</html> 

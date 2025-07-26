@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promptweaver: Rise of the Sigil - Chamber of Dimensions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="room-search-2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Montserrat:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop>
+    
+        </video>
+    </div>
+
+    <!-- Background Overlay -->
+    <div class="background-overlay"></div>
+
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Dimensional Rifts -->
+    <div class="dimensional-rifts">
+        <div class="rift rift-1"></div>
+        <div class="rift rift-2"></div>
+        <div class="rift rift-3"></div>
+    </div>
+
+    <!-- Floating Geometric Shapes -->
+    <div class="geometric-shapes">
+        <div class="shape shape-1">◊</div>
+        <div class="shape shape-2">△</div>
+        <div class="shape shape-3">◈</div>
+        <div class="shape shape-4">⬟</div>
+        <div class="shape shape-5">◯</div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal active" id="roomVideoModal">
+        <div class="video-container">
+            <div class="video-title">Entering the Chamber of Dimensions...</div>
+            <video class="video-player" id="roomVideo" autoplay muted>
+                <source src="Video_Ready_Cosmic_Portal_Revealed.mp4" type="video/mp4">
+            </video>
+            <button class="proceed-btn" id="proceedBtn">Proceed to Dimensional Nexus</button>
+        </div>
+    </div>
+
+    <!-- Page Content (Initially Hidden) -->
+    <div class="container" id="pageContent" style="display: none;">
+        <h1 class="title">Chamber of Dimensions</h1>
+        
+        <div class="story">
+            <p>You step into a realm where reality bends and folds upon itself. The very fabric of space-time ripples around you as dimensional portals flicker in and out of existence. Ancient geometric patterns float through the air, their crystalline forms catching light from impossible angles.</p>
+            
+            <p>The Fragment of Space calls to you from within this maze of folded dimensions. Here, the laws of physics are merely suggestions, and the boundaries between parallel worlds grow thin. You sense that solving the mysteries of this chamber will unlock the power to traverse infinite realities.</p>
+            
+            <p>Whispers echo from beyond the dimensional veil: <em>"Where dimensions fold and reality bends, find the key to infinite paths."</em></p>
+        </div>
+
+        <a href="puzzle-interface.html?round=2" class="cta">Enter the Dimensional Nexus</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="global-timer.js"></script>
+    <script src="room-search-2.js"></script>
+</body>
+</html> 

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room 3: Chamber of Nested Wards - Graph Coloring Challenge</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="room-3-nested-wards.css">
+</head>
+<body>
+  <!-- Magical Ward Chamber Background -->
+  <div class="ward-chamber-background" id="wardBackground">
+    <div class="energy-ring ring-1"></div>
+    <div class="energy-ring ring-2"></div>
+    <div class="energy-ring ring-3"></div>
+    <div class="floating-runes" id="floatingRunes"></div>
+    <div class="ward-particles" id="wardParticles"></div>
+  </div>
+
+  <!-- Room Header -->
+  <div class="room-header">
+    <h1 class="room-title">Chamber of Nested Wards</h1>
+    <h2 class="room-subtitle">Graph Coloring Challenge</h2>
+    <div class="coloring-info">
+      <div class="info-item">
+        <span class="info-label">Colors Used:</span>
+        <span class="info-value" id="colorsUsed">0</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Minimum Colors:</span>
+        <span class="info-value" id="minColors">--</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Conflicts:</span>
+        <span class="info-value" id="conflicts">0</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Efficiency:</span>
+        <span class="info-value" id="efficiency">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Graph Coloring Challenge Area -->
+  <div class="coloring-challenge-container">
+    <!-- Ward Network Visualization -->
+    <div class="ward-network-section">
+      <h3 class="section-title">🎨 Magical Ward Network</h3>
+      <div class="network-canvas" id="networkCanvas">
+        <!-- Ward nodes and connections will be dynamically generated -->
+        <svg id="connectionsSvg" class="connections-svg"></svg>
+        <div class="ward-nodes" id="wardNodes"></div>
+      </div>
+      <div class="color-legend">
+        <h4>🌈 Available Ward Colors</h4>
+        <div class="color-palette" id="colorPalette">
+          <!-- Color options will be dynamically generated -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Algorithm Control Panel -->
+    <div class="algorithm-panel">
+      <h3 class="panel-title">🎯 Graph Coloring Controls</h3>
+      
+      <div class="algorithm-state">
+        <div class="current-step" id="currentStep">
+          Select ward colors to ensure no adjacent wards share the same color
+        </div>
+        <div class="algorithm-info">
+          <div class="info-row">
+            <span>Current Phase:</span>
+            <span id="currentPhase">Manual Coloring</span>
+          </div>
+          <div class="info-row">
+            <span>Wards Colored:</span>
+            <span id="wardsColored">0</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="control-buttons">
+        <button class="control-btn" id="resetColoringBtn" onclick="resetColoring()">
+          🔄 Reset Coloring
+        </button>
+        <button class="control-btn" id="validateBtn" onclick="validateColoring()">
+          ✅ Validate Solution
+        </button>
+      </div>
+      
+      <!-- Graph Coloring Visualization -->
+      <div class="coloring-visualization" id="coloringViz">
+        <h4>📊 Coloring Analysis</h4>
+        <div class="analysis-info" id="analysisInfo">
+          <div class="analysis-item">Graph will be analyzed after coloring...</div>
+        </div>
+      </div>
+      
+      <!-- Algorithm Explanation -->
+      <div class="algorithm-explanation">
+        <h4>🎓 Graph Coloring Principles</h4>
+        <ul>
+          <li><strong>Constraint:</strong> Adjacent wards cannot have the same color</li>
+          <li><strong>Objective:</strong> Use minimum number of colors possible</li>
+          <li><strong>Chromatic Number:</strong> Minimum colors needed for the graph</li>
+          <li><strong>Strategy:</strong> Start with high-degree vertices first</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Instructions -->
+  <div class="game-instructions">
+    <h3>📋 Graph Coloring Instructions</h3>
+    <ul>
+      <li>🎨 <strong>Objective:</strong> Color all ward nodes so no adjacent wards have the same color</li>
+      <li>🔗 <strong>Adjacent Wards:</strong> Wards connected by energy lines are adjacent</li>
+      <li>🌈 <strong>Color Selection:</strong> Click a color from the palette, then click a ward to color it</li>
+      <li>🎯 <strong>Goal:</strong> Use the minimum number of colors possible</li>
+      <li>⚠️ <strong>Conflicts:</strong> Red connections indicate color conflicts that must be resolved</li>
+      <li>✨ <strong>Victory:</strong> Successfully color all wards with no conflicts!</li>
+    </ul>
+  </div>
+
+  <!-- Victory Modal -->
+  <div class="victory-modal" id="victoryModal">
+    <div class="modal-content ward-glow">
+      <h2>🏆 Ward Coloring Master!</h2>
+      <p>You've successfully colored the magical ward network using graph coloring principles!</p>
+      <div class="victory-stats">
+        <div class="stat">
+          <span class="stat-label">Colors Used:</span>
+          <span class="stat-value" id="finalColorsUsed">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Optimal Colors:</span>
+          <span class="stat-value" id="finalOptimalColors">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Efficiency:</span>
+          <span class="stat-value" id="finalEfficiency">0%</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Graph Complexity:</span>
+          <span class="stat-value" id="graphComplexity">Medium</span>
+        </div>
+      </div>
+      <div class="ward-harmony">
+        <div class="colored-wards">🟡🔵🟢🟣</div>
+        <p class="harmony-text">The wards pulse in perfect chromatic harmony!</p>
+      </div>
+      <div class="fragment-reward">
+        <h3>🎁 Fragment Reward</h3>
+        <div class="reward-fragment">Background Setting: The enchanted Grand Hall filled with ancient runes</div>
+      </div>
+      <button class="next-room-btn" onclick="proceedToNextRoom()">Continue to Hall of Reflections →</button>
+    </div>
+  </div>
+
+  <!-- Conflict Modal -->
+  <div class="conflict-modal" id="conflictModal">
+    <div class="modal-content conflict-content">
+      <h2>⚠️ Ward Conflicts Detected!</h2>
+      <div class="conflict-explanation">
+        <p>Adjacent wards cannot share the same color energy!</p>
+        <div class="conflict-list" id="conflictList">
+          <!-- Conflicts will be listed here -->
+        </div>
+      </div>
+      <button class="conflict-close-btn" onclick="closeConflictModal()">Resolve Conflicts</button>
+    </div>
+  </div>
+
+  <!-- Algorithm Tutorial Modal -->
+  <div class="tutorial-modal" id="tutorialModal">
+    <div class="modal-content tutorial-content">
+      <h2>🎓 Graph Coloring Tutorial</h2>
+      <div class="tutorial-steps">
+        <div class="tutorial-step">
+          <h4>Step 1: Understanding the Graph</h4>
+          <p>Each ward is a vertex, and energy connections are edges. Adjacent wards cannot have the same color.</p>
+        </div>
+        <div class="tutorial-step">
+          <h4>Step 2: Greedy Strategy</h4>
+          <p>Start with the ward that has the most connections (highest degree) and assign it the first color.</p>
+        </div>
+        <div class="tutorial-step">
+          <h4>Step 3: Color Assignment</h4>
+          <p>For each remaining ward, assign the lowest-numbered color that doesn't conflict with adjacent wards.</p>
+        </div>
+        <div class="tutorial-step">
+          <h4>Step 4: Optimization</h4>
+          <p>Try to minimize the total number of colors used while maintaining no conflicts.</p>
+        </div>
+      </div>
+      <button class="tutorial-close-btn" onclick="closeTutorial()">Start Coloring!</button>
+    </div>
+  </div>
+
+  <script src="room-3-nested-wards.js"></script>
+</body>
+</html> 

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promptweaver: Rise of the Sigil - Final Quest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="final-quest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Montserrat:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay loop id="backgroundVideo">
+    
+        </video>
+    </div>
+
+    <!-- Background Overlay -->
+    <div class="background-overlay"></div>
+
+    <!-- Stars -->
+    <div class="stars" id="stars"></div>
+
+
+
+    <!-- Mystical Energy -->
+    <div class="mystical-energy">
+        <div class="energy-stream stream-1"></div>
+        <div class="energy-stream stream-2"></div>
+        <div class="energy-stream stream-3"></div>
+        <div class="energy-stream stream-4"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="final-container">
+        <div class="quest-header">
+            <h1 class="final-title">The Guardian's Portrait</h1>
+            <p class="final-subtitle">Unite the Fragments to Restore the Academy</p>
+        </div>
+
+        <!-- Fragment Display -->
+        <div class="fragments-section">
+            <h2 class="section-title">Collected Fragments</h2>
+            <div class="fragments-grid" id="fragmentsGrid">
+                <!-- Fragments will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Decoding Section -->
+        <div class="decoding-section">
+            <h2 class="section-title">Decode the Ancient Wisdom</h2>
+            <div class="hints-container" id="hintsContainer">
+                <div class="hint-card">
+                    <div class="hint-header">
+                        <span class="hint-symbol">⧖</span>
+                        <span class="hint-title">Fragment of Time</span>
+                    </div>
+                    <div class="hint-text encrypted" data-fragment="time">
+                        "In the realm where time flows backward, seek the mirror of forgotten dreams."
+                    </div>
+                    <div class="decoded-text" style="display: none;">
+                        A mystical guardian standing before an ancient mirror that reflects swirling galaxies and forgotten memories
+                    </div>
+                </div>
+
+                <div class="hint-card">
+                    <div class="hint-header">
+                        <span class="hint-symbol">◊</span>
+                        <span class="hint-title">Fragment of Space</span>
+                    </div>
+                    <div class="hint-text encrypted" data-fragment="space">
+                        "Where dimensions fold and reality bends, find the key to infinite paths."
+                    </div>
+                    <div class="decoded-text" style="display: none;">
+                        A magical academy floating between dimensional portals with geometric patterns and infinite pathways
+                    </div>
+                </div>
+
+                <div class="hint-card">
+                    <div class="hint-header">
+                        <span class="hint-symbol">◈</span>
+                        <span class="hint-title">Fragment of Mind</span>
+                    </div>
+                    <div class="hint-text encrypted" data-fragment="mind">
+                        "In the labyrinth of consciousness, discover the echo of ancient wisdom."
+                    </div>
+                    <div class="decoded-text" style="display: none;">
+                        Neural networks of golden light connecting ancient books and scrolls floating in a cosmic library
+                    </div>
+                </div>
+
+                <div class="hint-card">
+                    <div class="hint-header">
+                        <span class="hint-symbol">✦</span>
+                        <span class="hint-title">Fragment of Soul</span>
+                    </div>
+                    <div class="hint-text encrypted" data-fragment="soul">
+                        "At the nexus of all existence, unite the fragments to restore the Guardian's Portrait."
+                    </div>
+                    <div class="decoded-text" style="display: none;">
+                        A divine painting materializing from fragments of light, protected by celestial guardians in a sacred chamber
+                    </div>
+                </div>
+            </div>
+
+            <div class="decode-controls">
+                <button class="decode-btn" id="decodeBtn">Decode Fragments</button>
+                <div class="decode-progress" id="decodeProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="decodeProgressFill"></div>
+                    </div>
+                    <div class="progress-text">Decoding ancient wisdom...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prompt Creation Section -->
+        <div class="prompt-section" id="promptSection" style="display: none;">
+            <h2 class="section-title">Create the Restoration Prompt</h2>
+            <div class="prompt-instructions">
+                <p>Combine the decoded fragments to create a powerful prompt that will restore the Guardian's Portrait:</p>
+            </div>
+            
+            <div class="prompt-builder">
+                <textarea 
+                    class="prompt-input" 
+                    id="promptInput" 
+                    placeholder="Weave the fragments together to create your restoration prompt..."
+                    maxlength="500"
+                ></textarea>
+                <div class="prompt-counter">
+                    <span id="promptCounter">0</span>/500 characters
+                </div>
+            </div>
+
+            <div class="prompt-controls">
+                <button class="generate-btn" id="generateBtn" disabled>Generate Guardian's Portrait</button>
+                <button class="auto-fill-btn" id="autoFillBtn">Auto-Fill from Fragments</button>
+            </div>
+        </div>
+
+        <!-- Image Generation Section -->
+        <div class="generation-section" id="generationSection" style="display: none;">
+            <h2 class="section-title">The Guardian's Portrait Awakens</h2>
+            <div class="generation-container">
+                <div class="generation-placeholder" id="generationPlaceholder">
+                    <div class="generation-spinner">
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring"></div>
+                    </div>
+                    <div class="generation-text">Channeling mystical energies...</div>
+                    <div class="generation-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="generationProgressFill"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="generated-image-container" id="generatedImageContainer" style="display: none;">
+                    <img id="generatedImage" class="generated-image" alt="The Guardian's Portrait">
+                    <div class="image-frame"></div>
+                </div>
+            </div>
+
+            <div class="generation-controls" id="generationControls" style="display: none;">
+                <button class="complete-quest-btn" id="completeQuestBtn">Complete the Quest</button>
+                <button class="regenerate-btn" id="regenerateBtn">Regenerate Portrait</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Victory Modal -->
+    <div class="victory-modal" id="victoryModal" style="display: none;">
+        <div class="victory-container">
+            <div class="victory-title">Quest Complete!</div>
+            <div class="victory-subtitle">The Guardian's Portrait has been restored!</div>
+            <video class="victory-video" id="victoryVideo">
+                <source src="Jul_18__2039_16s_202507250058_26ljb.mp4" type="video/mp4">
+            </video>
+            <div class="victory-stats" id="victoryStats">
+                <div class="stat-item">
+                    <span class="stat-label">Quest Time:</span>
+                    <span class="stat-value" id="finalTime">--:--</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Fragments Collected:</span>
+                    <span class="stat-value">4/4</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Academy Status:</span>
+                    <span class="stat-value">Protected</span>
+                </div>
+            </div>
+            <button class="restart-btn" id="restartBtn">Begin New Quest</button>
+        </div>
+    </div>
+
+    <!-- Time Warning Modal -->
+    <div class="time-warning-modal" id="timeWarningModal" style="display: none;">
+        <div class="warning-container">
+            <div class="warning-icon">⚠️</div>
+            <div class="warning-title">Time Running Out!</div>
+            <div class="warning-text">You have less than 5 minutes remaining to complete your quest!</div>
+            <button class="warning-close-btn" id="warningCloseBtn">Continue Quest</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="global-timer.js"></script>
+    <script src="final-quest.js"></script>
+</body>
+</html> 

@@ -1,0 +1,394 @@
+/* ===== ROOM 3 - CONSCIOUSNESS THEME ===== */
+
+/* Neural Network Effects */
+.neural-network {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.synapse {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(67, 231, 173, 0.8) 20%, 
+    rgba(0, 255, 255, 0.6) 50%, 
+    rgba(67, 231, 173, 0.8) 80%, 
+    transparent 100%);
+  border-radius: 2px;
+  animation: synapticPulse 3s ease-in-out infinite;
+}
+
+.synapse-1 {
+  top: 10%;
+  left: 15%;
+  transform: rotate(25deg);
+  animation-delay: 0s;
+}
+
+.synapse-2 {
+  top: 40%;
+  right: 20%;
+  transform: rotate(-35deg);
+  animation-delay: -1s;
+}
+
+.synapse-3 {
+  bottom: 30%;
+  left: 25%;
+  transform: rotate(45deg);
+  animation-delay: -2s;
+}
+
+.synapse-4 {
+  top: 60%;
+  left: 60%;
+  transform: rotate(-15deg);
+  animation-delay: -1.5s;
+}
+
+@keyframes synapticPulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1) rotate(var(--rotation, 0deg));
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(calc(var(--rotation, 0deg) + 2deg));
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(var(--rotation, 0deg));
+    filter: blur(1px);
+  }
+}
+
+/* Consciousness Patterns */
+.consciousness-patterns {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pattern {
+  position: absolute;
+  font-size: 1.8rem;
+  color: #43e7ad;
+  text-shadow: 0 0 15px #43e7ad;
+  animation: consciousnessFlow 8s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.pattern-1 {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+  font-size: 2.2rem;
+}
+
+.pattern-2 {
+  top: 45%;
+  right: 25%;
+  animation-delay: -1.5s;
+  font-size: 1.6rem;
+}
+
+.pattern-3 {
+  bottom: 35%;
+  left: 20%;
+  animation-delay: -3s;
+  font-size: 2rem;
+}
+
+.pattern-4 {
+  top: 30%;
+  left: 70%;
+  animation-delay: -4.5s;
+  font-size: 1.4rem;
+}
+
+.pattern-5 {
+  bottom: 25%;
+  right: 35%;
+  animation-delay: -6s;
+  font-size: 1.9rem;
+}
+
+@keyframes consciousnessFlow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.6;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) scale(1.1);
+    opacity: 0.9;
+    filter: hue-rotate(30deg);
+  }
+  50% {
+    transform: translateY(-5px) scale(0.9);
+    opacity: 0.7;
+    filter: hue-rotate(60deg);
+  }
+  75% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 1;
+    filter: hue-rotate(90deg);
+  }
+}
+
+/* Proceed Button - Consciousness Design */
+.proceed-btn {
+  display: none;
+  margin: 25px auto 0;
+  background: linear-gradient(135deg, #43e7ad 0%, #00ffff 50%, #20b2aa 100%);
+  color: #ffffff;
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 15px 35px;
+  border: 2px solid rgba(67, 231, 173, 0.5);
+  border-radius: 25px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: 
+    0 0 25px rgba(67, 231, 173, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.proceed-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.proceed-btn:hover::before {
+  left: 100%;
+}
+
+.proceed-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 35px rgba(67, 231, 173, 0.7),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(67, 231, 173, 0.8);
+}
+
+/* Room-specific video modal adjustments */
+.video-modal .video-title {
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #43e7ad 0%, #00ffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  text-shadow: 0 0 15px #43e7ad, 0 0 25px rgba(67, 231, 173, 0.5);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+/* Page content animations */
+.container {
+  animation: consciousnessEntry 1.8s ease-out forwards;
+}
+
+@keyframes consciousnessEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Enhanced story section for consciousness theme */
+.story {
+  border: 2px solid #43e7ad;
+  box-shadow: 
+    0 0 40px rgba(67, 231, 173, 0.4), 
+    inset 0 0 20px rgba(67, 231, 173, 0.1);
+  background: linear-gradient(135deg, 
+    rgba(67, 231, 173, 0.1) 0%, 
+    rgba(0, 255, 255, 0.05) 100%);
+  position: relative;
+}
+
+.story::before {
+  content: '◈';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #43e7ad;
+  background: linear-gradient(135deg, rgba(15, 5, 30, 0.95) 0%, rgba(25, 10, 45, 0.95) 100%);
+  padding: 5px 15px;
+  border-radius: 50%;
+  text-shadow: 0 0 10px #43e7ad;
+}
+
+/* Enhanced CTA for mind's core entry */
+.cta {
+  background: linear-gradient(135deg, #43e7ad 0%, #00ffff 50%, #20b2aa 100%);
+  box-shadow: 
+    0 2px 24px rgba(67, 231, 173, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(67, 231, 173, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta:hover::before {
+  left: 100%;
+}
+
+.cta:hover {
+  background: linear-gradient(135deg, #00ffff 0%, #43e7ad 50%, #20b2aa 100%);
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 
+    0 8px 32px rgba(67, 231, 173, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(67, 231, 173, 0.6);
+}
+
+/* Enhanced title styling for consciousness theme */
+.title {
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px #43e7ad, 0 0 30px #00ffff, 0 2px 4px rgba(0,0,0,0.8);
+  background: linear-gradient(90deg, #43e7ad 0%, #00ffff 50%, #20b2aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+/* Consciousness ambient effects */
+.container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(67, 231, 173, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: consciousnessGlow 6s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes consciousnessGlow {
+  0% {
+    transform: translateX(-50%) scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.4) rotate(360deg);
+    opacity: 0.7;
+  }
+}
+
+/* Neural network particle effects */
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 25% 35%, rgba(67, 231, 173, 0.8), transparent),
+    radial-gradient(2px 2px at 75% 65%, rgba(0, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 55% 25%, rgba(32, 178, 170, 0.8), transparent),
+    radial-gradient(1px 1px at 35% 75%, rgba(67, 231, 173, 0.6), transparent);
+  background-size: 120px 120px, 180px 180px, 90px 90px, 140px 140px;
+  animation: neuralParticles 10s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes neuralParticles {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, -100% 100%, 100% -100%, -100% -100%;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+  .proceed-btn {
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    letter-spacing: 1px;
+  }
+  
+  .video-modal .video-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .cta {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .pattern {
+    font-size: 1.4rem;
+  }
+  
+  .synapse {
+    width: 3px;
+    height: 70px;
+  }
+  
+  .consciousness-patterns .pattern-1 {
+    font-size: 1.6rem;
+  }
+} 

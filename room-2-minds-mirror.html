@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room 2: Mind's Mirror - Knapsack Challenge</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="room-2-minds-mirror.css">
+</head>
+<body>
+  <!-- Prismatic Mirror Corridor Background -->
+  <div class="prismatic-background" id="prismaticBackground">
+    <div class="mirror-layer layer-1"></div>
+    <div class="mirror-layer layer-2"></div>
+    <div class="mirror-layer layer-3"></div>
+    <div class="mirror-refraction"></div>
+    <div class="light-particles" id="lightParticles"></div>
+  </div>
+
+  <!-- Room Header -->
+  <div class="room-header">
+    <h1 class="room-title">Mind's Mirror</h1>
+    <h2 class="room-subtitle">Memory Knapsack Challenge</h2>
+    <div class="memory-capacity">
+      <span class="capacity-label">Memory Capacity:</span>
+      <div class="capacity-bar">
+        <div class="capacity-fill" id="capacityFill"></div>
+        <span class="capacity-text" id="capacityText">0 / 100</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Knapsack Challenge Area -->
+  <div class="knapsack-container">
+    <!-- Available Memories Section -->
+    <div class="memories-section">
+      <h3 class="section-title">🧠 Available Memories</h3>
+      <div class="memories-grid" id="memoriesGrid">
+        <!-- Memory items will be dynamically generated -->
+      </div>
+    </div>
+
+    <!-- Mirror Portal Section -->
+    <div class="portal-section">
+      <div class="mirror-portal" id="mirrorPortal">
+        <div class="portal-glow"></div>
+        <div class="portal-surface">
+          <h3 class="portal-title">Selected Memories</h3>
+          <div class="selected-memories" id="selectedMemories">
+            <div class="empty-state">Drop memories here to carry them through the portal...</div>
+          </div>
+          <div class="portal-stats">
+            <div class="total-weight">Weight: <span id="totalWeight">0</span></div>
+            <div class="total-value">Power: <span id="totalValue">0</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Algorithm Visualization -->
+  <div class="algorithm-panel">
+    <h4>🎯 Knapsack Challenge</h4>
+    <p>Select memories to maximize power while staying within your memory capacity limit!</p>
+    <div class="optimal-solution" id="optimalHint" style="display: none;">
+      <strong>💡 Optimal Solution Found!</strong>
+      <span id="optimalText"></span>
+    </div>
+  </div>
+
+  <!-- Game Instructions -->
+  <div class="game-instructions">
+    <h3>📋 Instructions</h3>
+    <ul>
+      <li>🧠 Each memory has a <strong>weight</strong> (memory load) and <strong>value</strong> (power)</li>
+      <li>⚖️ Your memory capacity is limited to <strong>100 units</strong></li>
+      <li>🎯 Select memories to maximize total power without exceeding capacity</li>
+      <li>🔀 Drag memories to the portal or click to toggle selection</li>
+      <li>✨ Find the optimal combination to proceed!</li>
+    </ul>
+  </div>
+
+  <!-- Victory Modal -->
+  <div class="victory-modal" id="victoryModal">
+    <div class="modal-content prismatic-glow">
+      <h2>🏆 Mirror Mastery Achieved!</h2>
+      <p>You've solved the Knapsack Challenge with optimal efficiency!</p>
+      <div class="victory-stats">
+        <div class="stat">
+          <span class="stat-label">Memories Selected:</span>
+          <span class="stat-value" id="finalMemoryCount">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Total Power:</span>
+          <span class="stat-value" id="finalPower">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Efficiency:</span>
+          <span class="stat-value" id="efficiency">0%</span>
+        </div>
+      </div>
+      <div class="fragment-reward">
+        <h3>🎁 Fragment Reward</h3>
+        <div class="reward-fragment">Color Palette: emerald green, moonlight silver, golden sunrise</div>
+      </div>
+      <button class="next-room-btn" onclick="proceedToNextRoom()">Continue to Chamber of Nested Wards →</button>
+    </div>
+  </div>
+
+  <!-- Failure Modal -->
+  <div class="failure-modal" id="failureModal">
+    <div class="modal-content shatter-effect">
+      <h2>💥 Memory Overload!</h2>
+      <p>Your memory capacity has been exceeded. The portal rejects your selection!</p>
+      <button class="retry-btn" onclick="resetPuzzle()">Try Again</button>
+    </div>
+  </div>
+
+  <script src="room-2-minds-mirror.js"></script>
+</body>
+</html> 

@@ -1,0 +1,379 @@
+/* ===== ROOM 2 - DIMENSIONAL THEME ===== */
+
+/* Dimensional Rifts */
+.dimensional-rifts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rift {
+  position: absolute;
+  background: linear-gradient(45deg, 
+    transparent 0%, 
+    rgba(255, 0, 255, 0.3) 20%, 
+    rgba(138, 43, 226, 0.5) 50%, 
+    rgba(255, 0, 255, 0.3) 80%, 
+    transparent 100%);
+  border-radius: 50%;
+  filter: blur(2px);
+  animation: riftPulse 4s ease-in-out infinite alternate;
+}
+
+.rift-1 {
+  width: 200px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  transform: rotate(-15deg);
+  animation-delay: 0s;
+}
+
+.rift-2 {
+  width: 150px;
+  height: 60px;
+  top: 60%;
+  right: 15%;
+  transform: rotate(25deg);
+  animation-delay: -1.5s;
+}
+
+.rift-3 {
+  width: 180px;
+  height: 70px;
+  bottom: 25%;
+  left: 20%;
+  transform: rotate(45deg);
+  animation-delay: -3s;
+}
+
+@keyframes riftPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(1) rotate(var(--rotation, 0deg));
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.2) rotate(calc(var(--rotation, 0deg) + 5deg));
+  }
+}
+
+/* Floating Geometric Shapes */
+.geometric-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.shape {
+  position: absolute;
+  font-size: 2rem;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+  animation: geometricFloat 6s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.shape-1 {
+  top: 15%;
+  left: 25%;
+  animation-delay: 0s;
+  font-size: 2.5rem;
+}
+
+.shape-2 {
+  top: 35%;
+  right: 20%;
+  animation-delay: -1s;
+  font-size: 1.8rem;
+}
+
+.shape-3 {
+  bottom: 30%;
+  left: 15%;
+  animation-delay: -2s;
+  font-size: 2.2rem;
+}
+
+.shape-4 {
+  top: 50%;
+  left: 50%;
+  animation-delay: -3s;
+  font-size: 1.5rem;
+}
+
+.shape-5 {
+  bottom: 20%;
+  right: 30%;
+  animation-delay: -4s;
+  font-size: 2rem;
+}
+
+@keyframes geometricFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(-30px) rotate(270deg);
+    opacity: 0.9;
+  }
+}
+
+/* Proceed Button - Dimensional Design */
+.proceed-btn {
+  display: none;
+  margin: 25px auto 0;
+  background: linear-gradient(135deg, #8a2be2 0%, #ff00ff 50%, #da70d6 100%);
+  color: #ffffff;
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 15px 35px;
+  border: 2px solid rgba(255, 0, 255, 0.5);
+  border-radius: 25px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: 
+    0 0 25px rgba(255, 0, 255, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.proceed-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.proceed-btn:hover::before {
+  left: 100%;
+}
+
+.proceed-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 35px rgba(255, 0, 255, 0.7),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 0, 255, 0.8);
+}
+
+/* Room-specific video modal adjustments */
+.video-modal .video-title {
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #8a2be2 0%, #ff00ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  text-shadow: 0 0 15px #ff00ff, 0 0 25px rgba(255, 0, 255, 0.5);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+/* Page content animations */
+.container {
+  animation: dimensionalEntry 1.5s ease-out forwards;
+}
+
+@keyframes dimensionalEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) rotateX(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* Enhanced story section for dimensional theme */
+.story {
+  border: 2px solid #ff00ff;
+  box-shadow: 
+    0 0 40px rgba(255, 0, 255, 0.4), 
+    inset 0 0 20px rgba(255, 0, 255, 0.1);
+  background: linear-gradient(135deg, 
+    rgba(138, 43, 226, 0.1) 0%, 
+    rgba(255, 0, 255, 0.05) 100%);
+  position: relative;
+}
+
+.story::before {
+  content: '◊';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #ff00ff;
+  background: linear-gradient(135deg, rgba(15, 5, 30, 0.95) 0%, rgba(25, 10, 45, 0.95) 100%);
+  padding: 5px 15px;
+  border-radius: 50%;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+/* Enhanced CTA for dimensional nexus entry */
+.cta {
+  background: linear-gradient(135deg, #8a2be2 0%, #ff00ff 50%, #da70d6 100%);
+  box-shadow: 
+    0 2px 24px rgba(255, 0, 255, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 0, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta:hover::before {
+  left: 100%;
+}
+
+.cta:hover {
+  background: linear-gradient(135deg, #ff00ff 0%, #8a2be2 50%, #da70d6 100%);
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 
+    0 8px 32px rgba(255, 0, 255, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 0, 255, 0.6);
+}
+
+/* Enhanced title styling for dimensional theme */
+.title {
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px #ff00ff, 0 0 30px #8a2be2, 0 2px 4px rgba(0,0,0,0.8);
+  background: linear-gradient(90deg, #8a2be2 0%, #ff00ff 50%, #da70d6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+/* Dimensional ambient effects */
+.container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: dimensionalGlow 5s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes dimensionalGlow {
+  0% {
+    transform: translateX(-50%) scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.3) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+/* Dimensional particle effects */
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 0, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 80% 70%, rgba(138, 43, 226, 0.8), transparent),
+    radial-gradient(1px 1px at 60% 20%, rgba(218, 112, 214, 0.8), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255, 0, 255, 0.6), transparent);
+  background-size: 100px 100px, 150px 150px, 80px 80px, 120px 120px;
+  animation: dimensionalParticles 8s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes dimensionalParticles {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, -100% 100%, 100% -100%, -100% -100%;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+  .proceed-btn {
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    letter-spacing: 1px;
+  }
+  
+  .video-modal .video-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .cta {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .shape {
+    font-size: 1.5rem;
+  }
+  
+  .rift {
+    width: 120px;
+    height: 50px;
+  }
+  
+  .geometric-shapes .shape-1 {
+    font-size: 1.8rem;
+  }
+} 

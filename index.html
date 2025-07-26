@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promptweaver: Rise of the Sigil</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <!-- Background Image -->
+  <div class="image-background">
+    <img src="Gemini_Generated_Image_sgtvinsgtvinsgtv.png" alt="Multiverse Academy Background">
+  </div>
+  
+  <!-- Three.js Space Particles Container -->
+  <div id="space-particles"></div>
+  
+  <!-- Background overlay for text readability -->
+  <div class="background-overlay"></div>
+  
+  <!-- Enhanced stars -->
+  <div class="stars" id="stars"></div>
+  
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal">
+    <div class="video-container">
+      <button class="close-btn" id="closeBtn">&times;</button>
+      <div class="video-title">Your Quest Begins...</div>
+      <video class="video-player" id="questVideo">
+        <source src="Jul_18__2039_32s_202507241931_bqxma.mp4" type="video/mp4">
+        <source src="Jul_18__2039_32s_202507241931_bqxma.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button class="search-room-btn" id="searchRoomBtn">Search the Room</button>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="title">Promptweaver: <span style="color:#43e7ad;">Rise of the Sigil</span></div>
+    <div class="subtitle">A magical shield is broken. The multiverse trembles. Will<br>you restore the Guardian's Portrait!</div>
+    <div class="story">
+      A magical academy, once protected by the legendary <b>Guardian's Portrait</b>, now stands exposed. The painting has vanished, and with it, the shield that kept dark forces at bay. <br><br>
+      You, a chosen student, must journey through the academy's multiversal halls, solve <b>four enchanted puzzles</b>, gather the lost clue fragments, and craft a powerful prompt to restore the portrait and save the school. <br><br>
+      The fate of countless worlds rests in your hands. Time is running out — you have <b>45 minutes</b> before the darkness breaks through.
+    </div>
+    <div class="puzzles">
+      <div class="puzzle">
+        <div class="puzzle-title">Puzzle of Echoes</div>
+        Unravel the whispers of the past and piece together the academy's hidden history.
+      </div>
+      <div class="puzzle">
+        <div class="puzzle-title">Puzzle of Light</div>
+        Manipulate magical beams to reveal the unseen and illuminate the path forward.
+      </div>
+      <div class="puzzle">
+        <div class="puzzle-title">Puzzle of Riddles</div>
+        Solve enchanted riddles that test your wit and unlock secret chambers.
+      </div>
+      <div class="puzzle">
+        <div class="puzzle-title">Puzzle of Realms</div>
+        Traverse shifting realities and align the fragments of the multiverse.
+      </div>
+    </div>
+    <a href="#" class="cta" id="beginQuestBtn">Begin Your Quest</a>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="space-particles.js"></script>
+</body>
+</html> 

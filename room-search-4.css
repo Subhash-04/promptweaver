@@ -1,0 +1,420 @@
+/* ===== ROOM 4 - SOUL/SPIRITUAL THEME ===== */
+
+/* Sacred Geometry */
+.sacred-geometry {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sacred-shape {
+  position: absolute;
+  font-size: 3rem;
+  color: #f7b801;
+  text-shadow: 0 0 20px #f7b801, 0 0 40px rgba(247, 184, 1, 0.5);
+  animation: sacredRotation 12s linear infinite;
+  opacity: 0.8;
+}
+
+.sacred-1 {
+  top: 15%;
+  left: 20%;
+  animation-delay: 0s;
+  font-size: 3.5rem;
+}
+
+.sacred-2 {
+  top: 70%;
+  right: 25%;
+  animation-delay: -3s;
+  font-size: 2.8rem;
+}
+
+.sacred-3 {
+  bottom: 20%;
+  left: 30%;
+  animation-delay: -6s;
+  font-size: 3.2rem;
+}
+
+.sacred-4 {
+  top: 40%;
+  right: 15%;
+  animation-delay: -9s;
+  font-size: 2.5rem;
+}
+
+@keyframes sacredRotation {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.8;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+    opacity: 1;
+    filter: hue-rotate(15deg);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.9);
+    opacity: 0.9;
+    filter: hue-rotate(30deg);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.05);
+    opacity: 1;
+    filter: hue-rotate(45deg);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.8;
+    filter: hue-rotate(60deg);
+  }
+}
+
+/* Soul Energy Orbs */
+.soul-energy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.energy-orb {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(247, 184, 1, 0.8) 0%, 
+    rgba(255, 215, 0, 0.6) 30%, 
+    rgba(247, 184, 1, 0.4) 60%, 
+    transparent 100%);
+  animation: soulPulse 6s ease-in-out infinite;
+  filter: blur(2px);
+}
+
+.orb-1 {
+  top: 25%;
+  left: 15%;
+  animation-delay: 0s;
+  width: 100px;
+  height: 100px;
+}
+
+.orb-2 {
+  top: 55%;
+  right: 20%;
+  animation-delay: -2s;
+  width: 140px;
+  height: 140px;
+}
+
+.orb-3 {
+  bottom: 30%;
+  left: 40%;
+  animation-delay: -4s;
+  width: 80px;
+  height: 80px;
+}
+
+@keyframes soulPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: blur(2px) brightness(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.3);
+    filter: blur(1px) brightness(1.3);
+  }
+}
+
+/* Proceed Button - Soul Design */
+.proceed-btn {
+  display: none;
+  margin: 25px auto 0;
+  background: linear-gradient(135deg, #f7b801 0%, #ffd700 50%, #ffb347 100%);
+  color: #1a0b2e;
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 15px 35px;
+  border: 2px solid rgba(247, 184, 1, 0.5);
+  border-radius: 25px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: 
+    0 0 25px rgba(247, 184, 1, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.proceed-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.proceed-btn:hover::before {
+  left: 100%;
+}
+
+.proceed-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 35px rgba(247, 184, 1, 0.7),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+  border-color: rgba(247, 184, 1, 0.8);
+  color: #000;
+}
+
+/* Room-specific video modal adjustments */
+.video-modal .video-title {
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #f7b801 0%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+  text-shadow: 0 0 15px #f7b801, 0 0 25px rgba(247, 184, 1, 0.5);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+/* Page content animations */
+.container {
+  animation: soulEntry 2s ease-out forwards;
+}
+
+@keyframes soulEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    filter: brightness(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Enhanced story section for soul theme */
+.story {
+  border: 2px solid #f7b801;
+  box-shadow: 
+    0 0 40px rgba(247, 184, 1, 0.4), 
+    inset 0 0 20px rgba(247, 184, 1, 0.1);
+  background: linear-gradient(135deg, 
+    rgba(247, 184, 1, 0.1) 0%, 
+    rgba(255, 215, 0, 0.05) 100%);
+  position: relative;
+}
+
+.story::before {
+  content: '✦';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #f7b801;
+  background: linear-gradient(135deg, rgba(15, 5, 30, 0.95) 0%, rgba(25, 10, 45, 0.95) 100%);
+  padding: 5px 15px;
+  border-radius: 50%;
+  text-shadow: 0 0 15px #f7b801;
+}
+
+/* Enhanced CTA for soul's sanctuary entry */
+.cta {
+  background: linear-gradient(135deg, #f7b801 0%, #ffd700 50%, #ffb347 100%);
+  box-shadow: 
+    0 2px 24px rgba(247, 184, 1, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.2);
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(247, 184, 1, 0.3);
+  position: relative;
+  overflow: hidden;
+  color: #1a0b2e;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta:hover::before {
+  left: 100%;
+}
+
+.cta:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #f7b801 50%, #ffb347 100%);
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 
+    0 8px 32px rgba(247, 184, 1, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.3);
+  border-color: rgba(247, 184, 1, 0.6);
+  color: #000;
+}
+
+/* Enhanced title styling for soul theme */
+.title {
+  font-family: 'UnifrakturCook', cursive;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px #f7b801, 0 0 30px #ffd700, 0 2px 4px rgba(0,0,0,0.8);
+  background: linear-gradient(90deg, #f7b801 0%, #ffd700 50%, #ffb347 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+/* Soul ambient effects */
+.container::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(247, 184, 1, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: soulGlow 8s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes soulGlow {
+  0% {
+    transform: translateX(-50%) scale(1) rotate(0deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.5) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+/* Divine energy particle effects */
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(3px 3px at 30% 40%, rgba(247, 184, 1, 0.9), transparent),
+    radial-gradient(2px 2px at 70% 60%, rgba(255, 215, 0, 0.8), transparent),
+    radial-gradient(2px 2px at 50% 30%, rgba(255, 179, 71, 0.8), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(247, 184, 1, 0.7), transparent);
+  background-size: 150px 150px, 200px 200px, 100px 100px, 160px 160px;
+  animation: divineParticles 12s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes divineParticles {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, -100% 100%, 100% -100%, -100% -100%;
+  }
+}
+
+/* Sacred geometry overlays */
+.sacred-geometry::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(247, 184, 1, 0.2);
+  border-radius: 50%;
+  animation: sacredCircle 20s linear infinite;
+}
+
+@keyframes sacredCircle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    opacity: 0.2;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+  .proceed-btn {
+    font-size: 1.1rem;
+    padding: 12px 28px;
+    letter-spacing: 1px;
+  }
+  
+  .video-modal .video-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .cta {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .sacred-shape {
+    font-size: 2rem;
+  }
+  
+  .energy-orb {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .sacred-geometry .sacred-1 {
+    font-size: 2.5rem;
+  }
+  
+  .orb-2 {
+    width: 100px;
+    height: 100px;
+  }
+} 
