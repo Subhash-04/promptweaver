@@ -598,7 +598,7 @@ function createWardParticles() {
 
 // Proceed to next room
 function proceedToNextRoom() {
-  window.location.href = 'room-4-hall-reflections.html';
+  window.location.href = 'room-search-4.html';
 }
 
 // Initialize game when page loads

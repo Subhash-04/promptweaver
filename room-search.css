@@ -97,6 +97,14 @@
   border: 2px solid rgba(67, 231, 173, 0.3);
   position: relative;
   overflow: hidden;
+  /* Center the button */
+  display: block;
+  margin: 30px auto;
+  text-align: center;
+  width: fit-content;
+  padding: 15px 30px;
+  border-radius: 25px;
+  text-decoration: none;
 }
 
 .cta::before {
@@ -128,12 +136,15 @@
   font-family: 'UnifrakturCook', cursive;
   font-weight: 700;
   letter-spacing: 3px;
-  text-shadow: 0 0 20px #43e7ad, 0 0 30px #00ffff, 0 2px 4px rgba(0,0,0,0.8);
-  background: linear-gradient(90deg, #43e7ad 0%, #00ffff 50%, #ffffff 100%);
+  /* Reduced and more focused text shadow for better readability */
+  text-shadow: 0 0 10px #43e7ad, 0 0 15px #00ffff, 0 2px 4px rgba(0,0,0,0.8);
+  /* More solid gradient with better contrast */
+  background: linear-gradient(90deg, #00ffff 0%, #43e7ad 50%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  /* Reduced drop shadow for cleaner look */
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
 }
 
 /* Magical ambient effects */

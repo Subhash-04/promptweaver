@@ -278,8 +278,8 @@ function createMatchEffect() {
 
 // Proceed to next room
 function proceedToNextRoom() {
-  // Navigate directly to Room 2: Mind's Mirror
-  window.location.href = 'room-2-minds-mirror.html';
+  // Navigate to Room Search 2 first, then it will connect to Mind's Mirror
+  window.location.href = 'room-search-2.html';
 }
 
 // Add CSS keyframes for dynamic animations

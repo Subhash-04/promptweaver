@@ -9,23 +9,24 @@ let currentValue = 0;
 let optimalSolution = null;
 let gameCompleted = false;
 
-// Single predefined knapsack scenario with optimal solution
+// Single predefined knapsack scenario with shuffled items (optimal solution randomized)
 const KNAPSACK_SCENARIO = {
   name: "Celestial Memory Chamber",
   items: [
-    { name: "Crystal Orb", symbol: "🔮", weight: 20, value: 35 },
-    { name: "Thunder Stone", symbol: "⚡", weight: 22, value: 38 },
-    { name: "Moon Fragment", symbol: "🌙", weight: 16, value: 28 },
-    { name: "Ancient Scroll", symbol: "📜", weight: 15, value: 25 },
-    { name: "Celestial Map", symbol: "🗺️", weight: 10, value: 22 },
-    { name: "Dragon Scale", symbol: "🐉", weight: 8, value: 18 },
-    { name: "Star Essence", symbol: "⭐", weight: 9, value: 19 },
     { name: "Phoenix Feather", symbol: "🪶", weight: 5, value: 15 },
     { name: "Mystic Sword", symbol: "⚔️", weight: 25, value: 40 },
-    { name: "Water Pearl", symbol: "🔵", weight: 6, value: 16 }
+    { name: "Dragon Scale", symbol: "🐉", weight: 8, value: 18 },
+    { name: "Moon Fragment", symbol: "🌙", weight: 16, value: 28 },
+    { name: "Water Pearl", symbol: "🔵", weight: 6, value: 16 },
+    { name: "Crystal Orb", symbol: "🔮", weight: 20, value: 35 },
+    { name: "Star Essence", symbol: "⭐", weight: 9, value: 19 },
+    { name: "Ancient Scroll", symbol: "📜", weight: 15, value: 25 },
+    { name: "Celestial Map", symbol: "🗺️", weight: 10, value: 22 },
+    { name: "Thunder Stone", symbol: "⚡", weight: 22, value: 38 }
   ],
   // Optimal solution: Crystal Orb(20) + Thunder Stone(22) + Moon Fragment(16) + Ancient Scroll(15) + Celestial Map(10) + Dragon Scale(8) + Star Essence(9) = 100 EXACTLY
-  optimalSolution: [0, 1, 2, 3, 4, 5, 6] // indices that sum to exactly 100
+  // New shuffled indices: Crystal Orb(5) + Thunder Stone(9) + Moon Fragment(3) + Ancient Scroll(7) + Celestial Map(8) + Dragon Scale(2) + Star Essence(6)
+  optimalSolution: [5, 9, 3, 7, 8, 2, 6] // indices that sum to exactly 100
 };
 
 // Generate memory items for this puzzle instance
@@ -326,7 +327,7 @@ function resetPuzzle() {
 
 // Proceed to next room
 function proceedToNextRoom() {
-  window.location.href = 'room-3-nested-wards.html'; 
+  window.location.href = 'room-search-3.html'; 
 }
 
 // Initialize game function

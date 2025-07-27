@@ -64,7 +64,7 @@ class VideoModal {
     
     if (this.searchRoomBtn) {
       this.searchRoomBtn.addEventListener('click', () => {
-        Navigation.goToPage('puzzle-interface.html');
+        Navigation.goToPage('room-search.html');
       });
     }
 
